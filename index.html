@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oscillating Particle Simulation</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+    }
+
+    #container {
+        position: relative;
+        width: 600px;
+        height: 200px;
+    }
+
+    #particle {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        border-radius: 50%;
+        animation: oscillate linear infinite;
+    }
+
+    @keyframes oscillate {
+        0% { left: 0; }
+        50% { left: calc(100% - 20px); }
+        100% { left: 0; }
+    }
+
+    #periodSlider {
+        margin-top: 20px;
+        width: 100%;
+    }
+</style>
+</head>
+<body>
+<div id="container">
+    <div id="particle"></div>
+</div>
+<input type="range" min="1" max="5" value="1" class="slider" id="periodSlider">
+<script>
+    const particle = document.getElementById('particle');
+    const periodSlider = document.getElementById('periodSlider');
+
+    function updatePeriod() {
+        const period = periodSlider.value;
+        particle.style.animationDuration = `${period}s`;
+    }
+
+    periodSlider.addEventListener('input', updatePeriod);
+
+    updatePeriod(); // Initial call to set the initial period
+</script>
+</body>
+</html>
