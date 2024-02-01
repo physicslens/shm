@@ -42,12 +42,6 @@
         width: 100%;
     }
 </style>
-</head>
-<body>
-<div id="container">
-    <div id="particle"></div>
-</div>
-<input type="range" min="1" max="5" value="1" class="slider" id="periodSlider">
 <script>
     const particle = document.getElementById('particle');
     const periodSlider = document.getElementById('periodSlider');
@@ -61,5 +55,12 @@
 
     updatePeriod(); // Initial call to set the initial period
 </script>
+</head>
+<body>
+<div id="container">
+    <div id="particle"></div>
+</div>
+<input type="range" min="1" max="5" value="1" class="slider" id="periodSlider">
+
 </body>
 </html>
