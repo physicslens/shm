@@ -53,7 +53,7 @@
     const container = document.getElementById('container');
     const speedRange = document.getElementById('speedRange');
 
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 100; i++) {
       const particle = document.createElement('div');
       particle.className = 'particle';
       container.appendChild(particle);
@@ -77,7 +77,7 @@
       const phaseIncrement = 1; // Difference in phase between particles
       for (let i = 0; i < particles.length; i++) {
         const phaseShift = (i * phaseIncrement) * Math.PI * 2; // Phase shift for each particle
-        const offsetX = amplitude * Math.sin(((time + phaseShift) / 1000) * (2 * Math.PI / period));
+        const offsetX = amplitude * Math.sin(((time + phaseShift) / 1000) * (2 * Math.PI / (10*period));
         const x = 300 + offsetX; // Center x position
         particles[i].style.left = `${x}px`;
       }
